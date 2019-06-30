@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-white">پنل کاربری</a>
+  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">خروج</button>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item dropdown" style="width: 100pxx" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="direction: rtl; padding-left: 1600px;">
+         مدیرت کاربران
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="direction: rtl; margin-left: 1600px; width: 60px;" >
+          <a class="dropdown-item" routerLink='/home/afzodan'  routerLinkActive="active">افزودن کاربر</a>
+
+          
+
+          <a class="dropdown-item" *ngIf="userDetails.userRoleID == 1"  href="#">ویرایش کاربر</a>
+          
+          <a class="dropdown-item" *ngIf="userDetails.userRoleID == 1"  href="#">حذف کاربر</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home/afzodangozaresh'  routerLinkActive="active">افزودن گزارش</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
+<div  style="width: 360px; padding-left: 1520px; padding-right: 20px; padding-top: 25px; " *ngIf="userDetails">
+  <ul class="list-group" style="direction: rtl; width: 400px;">
+   <!-- <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 200px;"><strong>نام کاربری : </strong>{{userDetails.userName}}</li> -->
+    <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 200px;"><strong>کاربر جاری </strong>{{userDetails.fullName}}</li>
+   <!-- <li class="list-group-item" style="padding-left: 117px"><strong>ایمیل : </strong>{{userDetails.email}}</li>
+    <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 240px;"><strong>نقش کاربری : </strong>{{userDetails.userRoleID}}</li>
+    <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 150px;"><strong>دست رسی اضافه کردن : </strong>{{userDetails.add}}</li>
+    <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 150px;"><strong>دست رسی حذف کردن : </strong>{{userDetails.delete}}</li>
+    <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 175px;"><strong>دست رسی ویرایش : </strong>{{userDetails.edit}}</li>-->
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
