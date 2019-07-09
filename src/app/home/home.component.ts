@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
 import { AfzodanComponent } from './modiritkarbaran/afzodan.component';
 import { AfzodanGozaresh } from './modiriatgozaresh/afzodangozaresh.component';
+import { UploadComponent } from './upload/upload.component';
+import { GozareshComponent } from './modiriatgozaresh/listgozaresh.component';
+
+
 
 
 @Component({

@@ -17,6 +17,12 @@ import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AfzodanComponent } from './home/modiritkarbaran/afzodan.component';
 import { AfzodanGozaresh } from './home/modiriatgozaresh/afzodangozaresh.component'
+import { PersonComponent } from './home/person/listperson.component';
+import { PersonEdit } from './home/person/personedit.component';
+import { UploadComponent } from './home/upload/upload.component';
+import { GozareshComponent } from './home/modiriatgozaresh/listgozaresh.component';
+
+
 
 
 
@@ -29,7 +35,11 @@ import { AfzodanGozaresh } from './home/modiriatgozaresh/afzodangozaresh.compone
     LoginComponent,
     AfzodanComponent,
     HomeComponent,
-    AfzodanGozaresh
+    AfzodanGozaresh,
+    PersonComponent,
+    PersonEdit,
+    UploadComponent,
+    GozareshComponent
   ],
   imports: [
     

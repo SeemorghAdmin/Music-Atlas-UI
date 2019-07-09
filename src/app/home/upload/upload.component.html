@@ -1,0 +1,22 @@
+<div style=" width: 720px; height: 58px;  margin-right: 1000px; margin-top: 20px; border-radius: 10px;">
+<div class="row" style="margin-bottom:15px;">
+    <div class="col-md-3" style="padding-top: 10px;  padding-left: 20px">
+      <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+      <button type="button" class="btn btn-success" (click)="file.click()">آپلود فایل</button>
+    </div>
+    <div class="col-md-4">
+      <span class="upload" *ngIf="progress > 0">
+        {{progress}}%
+      </span>
+      <span class="upload" *ngIf="message">
+        {{message}}
+      </span>
+    </div>
+  </div>
+
+ <!-- <div class="row" style=" padding-top: 80px;" >
+    <div class="offset-md-5 col-md-2">
+      <button type="button" class="btn btn-primary" (click)="onCreate()">Create </button>
+    </div>
+  </div> -->
+</div>  

@@ -1,0 +1,26 @@
+<div style=" margin: 0 10%; margin-top: 40px; border-radius: 10px;">
+  <table class="table table-bordered table-striped table-dark" style="border-radius: 10px">
+    <thead>
+      <tr>
+        <th scope="col">فایل</th>
+        <th scope="col">ساز </th>
+        <th scope="col">شهر </th>
+        <th scope="col">استان </th>
+        <th scope="col">نام خانوادگی</th>
+        <th scope="col">نام</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reportDetails; let i = index">
+        <td>
+          <img src="http://localhost:54277/{{item.fileUrl}}"  width="259px" height="194">
+        </td>
+        <td>{{item.saz}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.state}}</td>
+        <td>{{item.family}}</td>
+        <td>{{item.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
