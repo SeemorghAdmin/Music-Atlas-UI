@@ -2,6 +2,7 @@
   <table class="table table-bordered table-striped table-dark" style="border-radius: 10px">
     <thead>
       <tr>
+        <th scope="col"></th>
         <th scope="col">فایل</th>
         <th scope="col">ساز </th>
         <th scope="col">شهر </th>
@@ -12,8 +13,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of reportDetails; let i = index">
+         <td type="button"  [routerLink]="['/home/detialsgozaresh/', item.id]" class="btn btn-success">جزییات</td>
         <td>
-          <img src="http://localhost:54277/{{item.fileUrl}}"  width="259px" height="194">
+          <img src="http://localhost:54277/{{item.fileUrl}}" width="90px" height="90px">
         </td>
         <td>{{item.saz}}</td>
         <td>{{item.city}}</td>

@@ -47,4 +47,10 @@ export class ReportService {
   getReport() {
     return this.http.get(this.BaseURI + '/Reports');
   }
+
+  getReportDeitls(id){
+    return this.http.get(this.BaseURI + '/Reports/' + id)
+  }
+  
 }
+

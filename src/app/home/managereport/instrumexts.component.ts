@@ -1,4 +1,4 @@
-import { ReportService } from '../../shared/report.service';
+import { InstrumextsService } from '../../shared/instrumexts.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,16 +6,16 @@ import { load } from '@angular/core/src/render3';
 
 
 @Component({
-  selector: 'listgozaresh',
-  templateUrl: './listgozaresh.component.html',
+  selector: 'instrumexts',
+  templateUrl: './instrumexts.component.html',
   styles: []
 })
-export class GozareshComponent implements OnInit {
-  reportDetails;
+export class InstrumextsType implements OnInit {
+    instrumextsType;
 
 
 
-  constructor(private router: Router, private service: ReportService) { }
+  constructor(private router: Router, private service: InstrumextsService) { }
 
 
  /* Detials(id): void {
@@ -30,12 +30,20 @@ export class GozareshComponent implements OnInit {
       }
     )
   } */
-
+delete(id) {
+    this.service.delete(id).subscribe(
+        res => {
+            if(res == true ){
+                window.location.reload();
+            }
+        }
+    );
+}
 
   ngOnInit() {
     this.service.getReport().subscribe(
       res => {
-        this.reportDetails = res;
+        this.instrumextsType = res;
       },
       err => {
         console.log(err);

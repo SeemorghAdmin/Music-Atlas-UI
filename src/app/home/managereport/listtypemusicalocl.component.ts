@@ -1,4 +1,4 @@
-import { ReportService } from '../../shared/report.service';
+import { TypeMusicService } from '../../shared/typemusiclocal.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,16 +6,16 @@ import { load } from '@angular/core/src/render3';
 
 
 @Component({
-  selector: 'listgozaresh',
-  templateUrl: './listgozaresh.component.html',
+  selector: 'listtypemusiclocal',
+  templateUrl: './listtypemusiclocal.component.html',
   styles: []
 })
-export class GozareshComponent implements OnInit {
-  reportDetails;
+export class ListTypeMusicLocal implements OnInit {
+  listTypeMusicLocal;
 
 
 
-  constructor(private router: Router, private service: ReportService) { }
+  constructor(private router: Router, private service: TypeMusicService) { }
 
 
  /* Detials(id): void {
@@ -30,12 +30,20 @@ export class GozareshComponent implements OnInit {
       }
     )
   } */
-
+delete(id) {
+    this.service.delete(id).subscribe(
+        res => {
+            if(res == true ){
+                window.location.reload();
+            }
+        }
+    );
+}
 
   ngOnInit() {
     this.service.getReport().subscribe(
       res => {
-        this.reportDetails = res;
+        this.listTypeMusicLocal = res;
       },
       err => {
         console.log(err);
