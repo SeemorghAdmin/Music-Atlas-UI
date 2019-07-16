@@ -10,11 +10,11 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item dropdown" style="width: 100px" >
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="direction: rtl; padding-left: 1600px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" [routerLinkActive]="['active']" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="direction: rtl; padding-left: 700px;">
          مدیرت کاربران
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="direction: rtl; margin-left: 1600px; width: 60px;" >
-          <a class="dropdown-item" routerLink='/home/afzodan'  routerLinkActive="active">افزودن کاربر</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="direction: rtl; margin-left: 700px; width: 60px;" >
+          <a class="dropdown-item" routerLink='/home/afzodan' [routerLinkActive]="['active']" >افزودن کاربر</a>
 
           
 
@@ -27,19 +27,38 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/afzodangozaresh'  routerLinkActive="active" style="padding-left: 1550px">افزودن گزارش</a>
+        <a class="nav-link" routerLink='/home/afzodangozaresh'[routerLinkActive]="['active']"   style="padding-left: 900px">افزودن گزارش</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/listperson'  routerLinkActive="active">کاربران</a>
+        <a class="nav-link" routerLink='/home/listperson' [routerLinkActive]="['active']" >کاربران</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/listgozaresh'  routerLinkActive="active">لیست گزارش</a>
+        <a class="nav-link" routerLink='/home/sendmessage' [routerLinkActive]="['active']" >پیام</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home/addtypemusiclocal' [routerLinkActive]="['active']" >افزودن موسقی محلی</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home/listtypemusiclocal' [routerLinkActive]="['active']" >لیست موسقی محلی</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home/listgozaresh' [routerLinkActive]="['active']" >لیست گزارش</a>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/upload'  routerLinkActive="active">آپلود</a>
+        <a class="nav-link" routerLink='/home/instrumexts'  [routerLinkActive]="['active']" >لیست ساز</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home/addinstrumexts'  [routerLinkActive]="['active']" >اضافه کردن ساز</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home/upload' [routerLinkActive]="['active']" >آپلود</a>
       </li>
 
     </ul>
@@ -52,12 +71,24 @@
   <ul class="list-group" style="direction: rtl; width: 400px;">
    <!-- <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 200px;"><strong>نام کاربری : </strong>{{userDetails.userName}}</li> -->
     <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 200px;"><strong>کاربر جاری </strong>{{userDetails.fullName}}</li>
+    <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 200px;"><strong>کاربر جاری </strong>{{userDetails.id}}</li>
+
    <!-- <li class="list-group-item" style="padding-left: 117px"><strong>ایمیل : </strong>{{userDetails.email}}</li>
     <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 240px;"><strong>نقش کاربری : </strong>{{userDetails.userRoleID}}</li>
     <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 150px;"><strong>دست رسی اضافه کردن : </strong>{{userDetails.add}}</li>
     <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 150px;"><strong>دست رسی حذف کردن : </strong>{{userDetails.delete}}</li>
     <li class="list-group-item" style="direction: rtl; padding-right: 3px; padding-left: 175px;"><strong>دست رسی ویرایش : </strong>{{userDetails.edit}}</li>-->
   </ul>
+</div>
+
+<div style="padding-left: 1600px">
+  <div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">پیام</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">ارسال کننده: {{message.userSenderId}} </h5>
+      <p class="card-text">متن: {{message.matnMessage}}</p>
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

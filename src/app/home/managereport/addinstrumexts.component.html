@@ -1,0 +1,31 @@
+<form [formGroup]="service.formModelInstrumexts" autocomplete="off" (submit)="onSubmit()"
+  style="background-color: #2e3137; border-radius: 10px; margin-top: 25px; margin-left: 600px; margin-right: 600px;">
+  <div style="padding: 15px">
+
+
+
+    <div class="form-group">
+      <label>نام</label>
+      <input class="form-control" formControlName="Name">
+    </div>
+
+
+    <label>توضیحات</label>
+    <div class="input-group required">
+
+      <div class="input-group-prepend">
+
+      </div>
+      <textarea class="form-control" formControlName="Comment" aria-label="With textarea"></textarea>
+    </div>
+
+
+
+
+    <div class="form-row">
+      <div class="form-group col-md-8 offset-md-2">
+        <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModelInstrumexts.valid">ثبت </button>
+      </div>
+    </div>
+  </div>
+</form>
