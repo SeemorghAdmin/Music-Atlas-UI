@@ -2,18 +2,41 @@
   <div class="form-group required">
     <label>نام کاربری</label>
     <input class="form-control" formControlName="UserName">
-    <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">لطفا نام کاربری را وارد نمایید</label>
+    <label class="text-danger"
+      *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">لطفا نام
+      کاربری را وارد نمایید</label>
   </div>
+
   <div class="form-group">
     <label>ایمیل</label>
     <input class="form-control" formControlName="Email">
-    <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">لطفا ایمیل را وارد نمایید</label>
+    <label class="text-danger"
+      *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">لطفا ایمیل را وارد
+      نمایید</label>
+
   </div>
   <div class="form-group">
     <label>نام</label>
     <input class="form-control" formControlName="FullName">
   </div>
 
+  <label style="color: azure">استان</label>
+  <br/>
+  <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" dir="rtl"
+    class="custom-select custom-select-sm">
+    <option> لطفا استان را انتخاب نمایید</option>
+    <option *ngFor="let item of state; let i = index" style="color: black;" (click)="test(item.id)">{{item.name}}
+    </option>
+  </select>
+<br/>
+  <label style="color: azure">شهر</label>
+  <br/>
+  <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" dir="rtl"
+    class="custom-select custom-select-sm">
+    <option> لطفا شهر را انتخاب نمایید</option>
+    <option *ngFor="let item of city; let i = index" style="color: black;" (click)="test1(item.id)">{{item.name}}
+    </option>
+  </select>
 
   <div class="form-group">
     <label>سن</label>
@@ -29,20 +52,28 @@
     <label>شماره تماس</label>
     <input class="form-control" formControlName="PhoneNumber">
   </div>
-  
+
 
   <div formGroupName="Passwords">
     <div class="form-group required">
       <label>رمز عبور</label>
       <input type="password" class="form-control" formControlName="Password">
-      <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">رمز عبور نمیتواند خالی باشد</label>
-      <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">حداقل باید 4 کارامتر باشد</label>
+      <label class="text-danger"
+        *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">رمز
+        عبور نمیتواند خالی باشد</label>
+      <label class="text-danger"
+        *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">حداقل
+        باید 4 کارامتر باشد</label>
     </div>
     <div class="form-group required">
       <label>تایید رمز عبور</label>
       <input type="password" class="form-control" formControlName="ConfirmPassword">
-      <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">رمز عبور نمیتواند خالی باشد</label>
-      <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">رمز عبور مطابقط ندارد</label>
+      <label class="text-danger"
+        *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">رمز
+        عبور نمیتواند خالی باشد</label>
+      <label class="text-danger"
+        *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">رمز
+        عبور مطابقط ندارد</label>
     </div>
   </div>
   <div class="form-row">

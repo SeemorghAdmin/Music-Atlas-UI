@@ -31,6 +31,7 @@ export class TypeMusicService {
       Name: this.formModelTypeMusicLocal.value.Name,
       Comment: this.formModelTypeMusicLocal.value.Comment,
     };
+    
     return this.http.post(this.BaseURI + '/TypeMusicLocals', body);
   }
 

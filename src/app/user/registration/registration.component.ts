@@ -1,6 +1,7 @@
 import { UserService } from './../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-registration',
@@ -8,14 +9,33 @@ import { ToastrService } from 'ngx-toastr';
   styles: []
 })
 export class RegistrationComponent implements OnInit {
-
-  constructor(public service: UserService, private toastr: ToastrService) { }
+state;
+city;
+cityid;
+  constructor(public service: UserService, private toastr: ToastrService, private http: HttpClient) { }
 
   ngOnInit() {
     this.service.formModel.reset();
+    this.http.get('http://localhost:54277/api/State').subscribe(
+      res => {
+        this.state = res;
+      }
+    );
+  }
+
+  test(id){
+    this.http.get('http://localhost:54277/api/City/' + id).subscribe(
+      res => {
+        this.city = res;
+      }
+    );
+  }
+  test1(id){
+    this.cityid = id;
   }
 
   onSubmit() {
+    this.service.formModel.value.City_ID = this.cityid;
     this.service.register().subscribe(
       (res: any) => {
         if (res.succeeded) {

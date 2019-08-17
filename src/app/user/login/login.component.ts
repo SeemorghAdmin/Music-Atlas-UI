@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       },
       err => {
         if (err.status == 400)
-          this.toastr.error('نام کاربری یا رمز عبور اشتاه است', 'ورود انجام نشد');
+          this.toastr.error('نام کاربری یا رمز عبور اشتباه است', 'ورود انجام نشد');
         else
           console.log(err);
       }

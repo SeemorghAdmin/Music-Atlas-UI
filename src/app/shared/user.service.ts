@@ -17,6 +17,7 @@ export class UserService {
     Age: [''],
     PersonalCode: [''],
     PhoneNumber: [''],
+    City_ID: [''],
     Passwords: this.fb.group({
       Password: ['', [Validators.required, Validators.minLength(4)]],
       ConfirmPassword: ['', Validators.required]
@@ -44,7 +45,8 @@ export class UserService {
       PersonalCode: this.formModel.value.PersonalCode,
       PhoneNumber: this.formModel.value.PhoneNumber,
       FullName: this.formModel.value.FullName,
-      Password: this.formModel.value.Passwords.Password
+      Password: this.formModel.value.Passwords.Password,
+      City_ID: this.formModel.value.City_ID
     };
     return this.http.post(this.BaseURI + '/ApplicationUser/Register', body);
   }
