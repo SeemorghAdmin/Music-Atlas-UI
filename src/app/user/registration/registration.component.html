@@ -1,6 +1,6 @@
 <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
-  <div class="form-group required">
-    <label>نام کاربری</label>
+  <div class="form-group ">
+    <label>  نام کاربری <span style="color: red">*</span> </label>
     <input class="form-control" formControlName="UserName">
     <label class="text-danger"
       *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">لطفا نام
@@ -8,7 +8,7 @@
   </div>
 
   <div class="form-group">
-    <label>ایمیل</label>
+    <label>ایمیل <span style="color: red">*</span> </label>
     <input class="form-control" formControlName="Email">
     <label class="text-danger"
       *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">لطفا ایمیل را وارد
@@ -16,25 +16,25 @@
 
   </div>
   <div class="form-group">
-    <label>نام</label>
+    <label>نام <span style="color: red">*</span> </label>
     <input class="form-control" formControlName="FullName">
   </div>
 
-  <label style="color: azure">استان</label>
+  <label style="color: azure">استان <span style="color: red">*</span> </label>
   <br/>
-  <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" dir="rtl"
+  <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" (change)="test($event.target.value)" dir="rtl"
     class="custom-select custom-select-sm">
-    <option> لطفا استان را انتخاب نمایید</option>
-    <option *ngFor="let item of state; let i = index" style="color: black;" (click)="test(item.id)">{{item.name}}
+    <option> لطفا استان را انتخاب نمایید  </option>
+    <option *ngFor="let item of state; let i = index" style="color: black;" value="{{item.id}}">{{item.name}}
     </option>
   </select>
 <br/>
-  <label style="color: azure">شهر</label>
+  <label style="color: azure">شهر <span style="color: red">*</span> </label>
   <br/>
-  <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" dir="rtl"
+  <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" (change)="test1($event.target.value)" dir="rtl"
     class="custom-select custom-select-sm">
     <option> لطفا شهر را انتخاب نمایید</option>
-    <option *ngFor="let item of city; let i = index" style="color: black;" (click)="test1(item.id)">{{item.name}}
+    <option *ngFor="let item of city; let i = index" style="color: black;"  value="{{item.id}}">{{item.name}}
     </option>
   </select>
 
@@ -44,19 +44,19 @@
   </div>
 
   <div class="form-group">
-    <label>کد ملی</label>
+    <label>کد ملی <span style="color: red">*</span> </label>
     <input class="form-control" formControlName="PersonalCode">
   </div>
 
   <div class="form-group">
-    <label>شماره تماس</label>
+    <label>شماره تماس <span style="color: red">*</span> </label>
     <input class="form-control" formControlName="PhoneNumber">
   </div>
 
 
   <div formGroupName="Passwords">
-    <div class="form-group required">
-      <label>رمز عبور</label>
+    <div class="form-group ">
+      <label>رمز عبور <span style="color: red">*</span></label>
       <input type="password" class="form-control" formControlName="Password">
       <label class="text-danger"
         *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">رمز
@@ -65,12 +65,12 @@
         *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">حداقل
         باید 4 کارامتر باشد</label>
     </div>
-    <div class="form-group required">
-      <label>تایید رمز عبور</label>
+    <div class="form-group ">
+      <label>تایید رمز عبور <span style="color: red">*</span></label>
       <input type="password" class="form-control" formControlName="ConfirmPassword">
       <label class="text-danger"
         *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">رمز
-        عبور نمیتواند خالی باشد</label>
+        عبور نمیتواند خالی باشد </label>
       <label class="text-danger"
         *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">رمز
         عبور مطابقط ندارد</label>

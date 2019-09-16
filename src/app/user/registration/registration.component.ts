@@ -16,7 +16,7 @@ cityid;
 
   ngOnInit() {
     this.service.formModel.reset();
-    this.http.get('http://localhost:54277/api/State').subscribe(
+    this.http.get('http://178.22.123.86/maapi/api/State').subscribe(
       res => {
         this.state = res;
       }
@@ -24,7 +24,7 @@ cityid;
   }
 
   test(id){
-    this.http.get('http://localhost:54277/api/City/' + id).subscribe(
+    this.http.get('http://178.22.123.86/maapi/api/City/' + id).subscribe(
       res => {
         this.city = res;
       }
@@ -40,7 +40,7 @@ cityid;
       (res: any) => {
         if (res.succeeded) {
           this.service.formModel.reset();
-          this.toastr.success('ثبت نام انجام شد', 'کاربر ایجاد شد');
+          this.toastr.success('مشخصات شما در سایت ثبت شد پس از تایید مدیریت سایت، امکان ورود شما ممکن خواهد بود.');
         } else {
           res.errors.forEach(element => {
             switch (element.code) {

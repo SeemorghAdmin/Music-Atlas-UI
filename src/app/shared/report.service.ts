@@ -13,7 +13,7 @@ import { UploadComponent } from './../home/upload/upload.component';
 
 export class ReportService {
   constructor(private fb: FormBuilder, private http: HttpClient,) { }
-  readonly BaseURI = 'http://localhost:54277/api';
+  readonly BaseURI = 'http://178.22.123.86/maapi/api';
 
   
   

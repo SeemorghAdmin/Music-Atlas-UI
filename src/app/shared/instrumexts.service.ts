@@ -13,7 +13,7 @@ import { UploadComponent } from './../home/upload/upload.component';
 
 export class InstrumextsService {
   constructor(private fb: FormBuilder, private http: HttpClient,) { }
-  readonly BaseURI = 'http://localhost:54277/api';
+  readonly BaseURI = 'http://178.22.123.86/maapi/api';
 
   
   
@@ -23,6 +23,8 @@ export class InstrumextsService {
   formModelInstrumexts = this.fb.group({
     Name: [''],
     Comment: [''],
+    FileUrl: [''],
+    TypeInstrumexts_ID: ['']
   });
 
 
@@ -30,6 +32,8 @@ export class InstrumextsService {
     var body = {
       Name: this.formModelInstrumexts.value.Name,
       Comment: this.formModelInstrumexts.value.Comment,
+      FileUrl: this.formModelInstrumexts.value.FileUrl,
+      TypeInstrumexts_ID: this.formModelInstrumexts.value.TypeInstrumexts_ID
     };
     return this.http.post(this.BaseURI + '/Instrumexts', body);
   }
@@ -51,6 +55,8 @@ delete(id){
       Id: id,
       Name: this.formModelInstrumexts.value.Name,
       Comment: this.formModelInstrumexts.value.Comment,
+      FileUrl: this.formModelInstrumexts.value.FileUrl,
+      TypeInstrumexts_ID: this.formModelInstrumexts.value.TypeInstrumexts_ID
     };
     return this.http.put(this.BaseURI + '/Instrumexts/' + id, body);
   }
