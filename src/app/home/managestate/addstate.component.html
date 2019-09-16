@@ -1,0 +1,27 @@
+<form [formGroup]="service.formModelState" autocomplete="off" (submit)="onSubmit()"
+    style=" border-radius: 10px; margin-top: 25px; margin-left: 600px; margin-right: 600px; background-color:#0067b8">
+    <div style="padding: 15px">
+
+        <div>
+            <h3 style="color: azure">
+                اضافه کردن استان 
+            </h3>
+        </div>
+
+        <div class="form-group">
+            <label> نام استان</label>
+            <input style="width: 40%; margin-left: 60%; border-radius: 0px;" class="form-control"
+                formControlName="Name">
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-8 offset-md-2">
+                <button
+                    style="width: 100px; color: #0067b8; background-color: #fff; border-color: transparent; border-radius: 0px;margin-left: 8px;"
+                    type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModelState.valid">ثبت
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

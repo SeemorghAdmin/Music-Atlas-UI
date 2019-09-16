@@ -8,8 +8,7 @@ import { UploadComponent } from './upload/upload.component';
 import { GozareshComponent } from './modiriatgozaresh/listgozaresh.component';
 import { SendMessage } from './modiriatmessage/message.component';
 import { MessageService } from './../shared/message.service';
-
-
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: 'app-home',
@@ -18,15 +17,18 @@ import { MessageService } from './../shared/message.service';
 })
 export class HomeComponent implements OnInit {
   userDetails;
+  users;
+  useracv
   message;
 
-  constructor(private router: Router, private service: UserService, private messageS: MessageService) { }
+  constructor(private router: Router, private service: UserService, private messageS: MessageService, private http : HttpClient) { }
 
   ngOnInit() {
-    this.service.getUserProfile().subscribe(
+     this.service.getUserProfile().subscribe(
       res => {
         this.userDetails = res;
-        this.messageS.getMesaage(this.userDetails.id).subscribe(
+
+       /* this.messageS.getMesaage(this.userDetails.id).subscribe(
           res => {
             this.message = res;
             console.log(res)
@@ -34,14 +36,21 @@ export class HomeComponent implements OnInit {
           err => {
             console.log(err);
           },
-        );
-      },
-      err => {
-        console.log(err);
-      },
-    );
+        );*/
 
-   
+         if (this.userDetails.userRoleID == 1 || this.userDetails.userRoleID == 2) {
+           this.http.get('http://178.22.123.86/maapi/api/account').subscribe(res => { this.users = res; });
+
+           this.http.get('http://178.22.123.86/maapi/api/ActiveAccount').subscribe(res => { this.useracv = res })
+         } 
+        
+      },
+    err => {
+      console.log(err);
+      },
+  ); 
+    
+    
   }
 
   onLogout() {

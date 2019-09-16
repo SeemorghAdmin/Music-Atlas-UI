@@ -16,12 +16,16 @@ export class AddTypeMusicLocal implements OnInit{
     
   
 
+    public response: {dbPath: ''};
+    public uploadFinished = (event) => {
+      this.response = event;
+    };
+
    
 
     
     ngOnInit() {
       this.service.formModelTypeMusicLocal.reset();
-      
     }
   
     onSubmit() {
@@ -30,8 +34,8 @@ export class AddTypeMusicLocal implements OnInit{
         (res: any) => {
           if (res == true) { 
             this.service.formModelTypeMusicLocal.reset();
-            this.toastr.success('ثبت نام شد');
             
+            this.toastr.success('ثبت با موفقیت انجام شد');
           } 
         },
         err => {
@@ -39,34 +43,6 @@ export class AddTypeMusicLocal implements OnInit{
         }
       );
     }
-
-   /* onSubmit() {
-      
-      this.service.AddReport().subscribe(
-        (res: any) => {
-          if (res) {
-            this.service.formModelTypeMusicLocal.reset();
-            this.toastr.success( 'ثبت گزارش انجام شد');
-          } else {
-            res.errors.forEach(element => {
-              switch (element.code) {
-                case 'DuplicateUserName':
-                  this.toastr.error('خطای رخ داده است','ثبت گزارش نشد');
-                  break;
-  
-                default:
-                this.toastr.error(element.description,'ثبت نام انجام نشد');
-                  break;
-              }
-            });
-          }
-        },
-        err => {
-          console.log(err);
-        }
-      );
-    }*/
-  
   
    }
   

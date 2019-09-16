@@ -2,71 +2,60 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { InstrumextsService } from './../../shared/instrumexts.service';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
-    selector: 'addinstrumexts',
-    templateUrl: './addinstrumexts.component.html',
-    styles: []
+  selector: 'addinstrumexts',
+  templateUrl: './addinstrumexts.component.html',
+  styles: []
 })
 
-export class AddInstrumexts implements OnInit{
+export class AddInstrumexts implements OnInit {
+ 
+  constructor(public service: InstrumextsService, private toastr: ToastrService, private http: HttpClient) { }
 
-    constructor(public service: InstrumextsService, private toastr: ToastrService){ }
+  typeid;
+  type;
+
+  public response: { dbPath: '' };
+  public uploadFinished = (event) => {
+    this.response = event;
+  };
+
+  test(id) {
+ this.typeid = id;
+    console.log(this.typeid);
+  }
+
   
-    
   
 
-   
 
-    
-    ngOnInit() {
-      this.service.formModelInstrumexts.reset();
-      
-    }
-  
-    onSubmit() {
-    //  this.service.formModelReport.value.FileUrl = this.response.dbPath
-      this.service.AddReport().subscribe(
-        (res: any) => {
-          if (res == true) { 
-            this.service.formModelInstrumexts.reset();
-            this.toastr.success('ثبت نام شد');
-            
-          } 
-        },
-        err => {
-          console.log(err);
+  ngOnInit() {
+    this.service.formModelInstrumexts.reset();
+    this.http.get('http://178.22.123.86/maapi/api/Fliter').subscribe(
+      res => {
+        this.type = res;
+     
+      }
+    );
+  }
+
+  onSubmit() {
+    this.service.formModelInstrumexts.value.FileUrl = this.response.dbPath;
+    this.service.formModelInstrumexts.value.TypeInstrumexts_ID = this.typeid;
+    this.service.AddReport().subscribe(
+      (res: any) => {
+        if (res == true) {
+          this.service.formModelInstrumexts.reset();
+          this.response.dbPath = '';
+          this.toastr.success('ثبت ساز انجام شد');
+
         }
-      );
-    }
-
-   /* onSubmit() {
-      
-      this.service.AddReport().subscribe(
-        (res: any) => {
-          if (res) {
-            this.service.formModelTypeMusicLocal.reset();
-            this.toastr.success( 'ثبت گزارش انجام شد');
-          } else {
-            res.errors.forEach(element => {
-              switch (element.code) {
-                case 'DuplicateUserName':
-                  this.toastr.error('خطای رخ داده است','ثبت گزارش نشد');
-                  break;
-  
-                default:
-                this.toastr.error(element.description,'ثبت نام انجام نشد');
-                  break;
-              }
-            });
-          }
-        },
-        err => {
-          console.log(err);
-        }
-      );
-    }*/
-  
-  
-   }
-  
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+}

@@ -1,19 +1,32 @@
-<div style=" margin: 0 10%; margin-top: 40px; border-radius: 10px;">
-    <table class="table table-bordered table-striped table-dark" style="border-radius: 10px">
-      <thead>
-        <tr>
-            <th scope="col"> مدیریت</th>
-          <th scope="col">توضیحات</th>
-          <th scope="col">نام</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of instrumextsType; let i = index">
-           <td> <button type="button" class="btn btn-danger" (click)="delete(item.id)" >حذف</button> <button type="button" [routerLink]="['/home/editinstrumexts/', item.id]" class="btn btn-success" style="margin-left: 5px">ویرایش</button>  </td>
-          <td>{{item.comment}}</td>
-          <td>{{item.name}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <!-- type="button"  [routerLink]="['/home/detialsgozaresh/', item.id]" class="btn btn-success" -->
+<div id="container" style="width: 550px;">
+  <table class="normal">
+    <thead>
+      <tr>
+        <th>ردیف</th>
+        <th style="width: 60px;">نام</th>
+        <th>توضیحات</th>
+        <th>تصاویر</th>
+        <th>بیشتر</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of instrumextsType; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.comment}}</td>
+        <td>
+          <img src="http://178.22.123.86/maapi/{{item.fileUrl}}" width="200px" height="200px">
+        </td>
+
+
+        <td style="text-align: center"> <button type="button" class="btn btn-danger"
+            (click)="delete(item.id)">حذف</button>
+          <button type="button" [routerLink]="['/home/editinstrumexts/', item.id]" class="btn  btn-primary"
+            style="margin-left: 5px">ویرایش</button> </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<!-- type="button"  [routerLink]="['/home/detialsgozaresh/', item.id]" class="btn btn-success" -->

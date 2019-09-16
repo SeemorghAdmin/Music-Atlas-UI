@@ -2,8 +2,6 @@ import { ReportService } from '../../shared/report.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
-import { load } from '@angular/core/src/render3';
-
 
 @Component({
   selector: 'listgozaresh',

@@ -1,0 +1,24 @@
+<div id="container" style="width: 400px;">
+    <table class="normal">
+        <thead>
+            <tr>
+                <th style="width: 20px;">شماره ردیف</th>
+                <th>نام</th>
+                <th>توضیحات</th>
+                <th>بیشتر</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of state; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.discription}}</td>
+                <td *ngIf="item.status == 3"> <button type="button"
+                        [routerLink]="['/home/edittypeinstrumexts/', item.id]" class="btn btn-primary"
+                        style="margin-left: 5px">ویرایش</button> </td>
+                <td *ngIf="item.status == 1">تایید شده</td>
+                <td *ngIf="item.status == 2">در دست بررسی</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

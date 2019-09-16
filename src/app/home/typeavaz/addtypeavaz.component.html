@@ -1,0 +1,29 @@
+<form [formGroup]="service.formTypeAvaz" autocomplete="off" (submit)="onSubmit()" style="border-radius: 10px; margin-top: 25px; margin-left: 600px; margin-right: 600px; background-color:#0067b8">
+    <div style="padding: 15px">
+        <div>
+            <h3 style="color: azure;">اضافه کردن نوع آواز</h3>
+        </div>
+        <div class="form-group">
+            <label>نام</label>
+            <input type="text" style="width: 40%; margin-left: 60%; border-radius: 0px;" class="form-control" formControlName="Name">
+        </div>
+    <label>توضیحات</label>
+    <div class="input-group required">
+    
+        <div class="input-group-prepend">
+    
+        </div>
+        <textarea style="direction: rtl;" class="form-control" formControlName="Discription" aria-label="With textarea"></textarea>
+    </div>
+    
+    
+    
+    
+    <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+            <button style="width: 100px; color: #0067b8; background-color: #fff; border-color: transparent; border-radius: 0px;margin-left: 8px; margin-top: 5px;" type="submit" class="btn btn-lg btn-block" [disabled]="!service.formTypeAvaz.valid">ثبت
+            </button>
+        </div>
+    </div>
+    </div>
+</form>

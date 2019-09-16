@@ -1,0 +1,21 @@
+<div style=" margin: 0 10%; margin-top: 40px; border-radius: 10px;">
+    <table class="table table-bordered table-striped table-dark" style="border-radius: 10px">
+        <thead>
+            <tr>
+                <th scope="col">زمان بازدید</th>
+                <th scope="col"> تاریچه </th>
+                <th scope="col">ساز ها</th>
+                <th scope="col">ردیف</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of ins; let i = index">
+                <th *ngIf="item.time == false">زمان های تعیین شده قابل اطلاع به وسیله تماس تلفنی/پیام رسان</th>
+                <th *ngIf="item.time == true">زمان آزاد به درخواست هنرجو و با هماهنگی قبلی توسط تلفن/پیام رسان</th>
+                <td> {{item.history}} </td>
+                <td>{{item.instrumexts}} {{item.instrumexts1}} {{item.instrumexts2}} {{item.instrumexts3}}</td>
+                <td>{{ i + 1}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

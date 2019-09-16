@@ -1,0 +1,231 @@
+<h4 style="margin-left: 40%;width: 400px;"> اماکن برگزاری حرکات موزون محلی و سنتی </h4>
+
+
+<form autocomplete="off"
+    style="background-color: rgba(47, 150, 180, 1); border-radius: 10px; margin-top: 25px; margin-left: 600px; margin-right: 600px;">
+    <div style="padding: 15px">
+
+        <h4 style="margin-left: 120px;width: auto;"> نوع اجرای حرکات موزون محلی و سنتی </h4>
+        <div class="form-group ">
+            <label class="form-check-inline">
+                اجرای گروهی توسط اجرا کنندگان حرفه ای
+                <input class="form-check-input" type="radio" name="typeDance" [value]="true"
+                    [(ngModel)]="rule.typeDance">
+            </label>
+        </div>
+        <div class="form-group ">
+            <label class="form-check-inline">
+                اجراهای عمومی توسط ساکنان محلی
+                <input class="form-check-input" type="radio" name="typeDance" [value]="false"
+                    [(ngModel)]="rule.typeDance">
+            </label>
+        </div>
+
+        <h4 style=" margin-left: 120px;width: auto;">سازهای همراهی کننده ی حرکات در این مکان عبارتند از </h4>
+        <div class="form-group " *ngFor="let item of userac; let i = index">
+            <div class="form-check">
+
+                <label style="margin-right: 7px;" class="form-check-label" for="defaultCheck1">
+                    {{item.name}}
+                </label>
+                <input class="form-check-input" name="saz" type="checkbox" id="defaultCheck1"
+                    (click)="selectMember(item)" [(ngModel)]="item.checked">
+            </div>
+        </div>
+
+        <h4 style="margin-left: 120px;width: auto;">آیا در این مکان موسیقی سازی و آوازی نیز اجرا میشود؟ </h4>
+        <div class="form-group ">
+            <label class="form-check-inline">
+                بله
+                <input class="form-check-input" type="radio" name="music" [value]="true" [(ngModel)]="rule.music">
+            </label>
+        </div>
+        <div class="form-group ">
+            <label class="form-check-inline">
+                خیر
+                <input class="form-check-input" type="radio" name="music" [value]="false" [(ngModel)]="rule.music">
+            </label>
+        </div>
+        <h4 style="margin-left: 120px;width: auto;">توضیح مختصری از نوع اجرا در این مکان ارایه نمایید </h4>
+
+        <textarea [(ngModel)]="rule.description"
+            style="direction: rtl; color: rgb(3, 0, 0); border-radius: 0px;width: 60%; margin-left: 300px;"
+            class="form-control" name="text" aria-label="With textarea"></textarea>
+
+        <h4 style="margin-left: 120px;width: auto;margin-top: 20px;"> زمانهای برگزاری؟ </h4>
+        <div class="form-group ">
+            <label class="form-check-inline">
+                الف: زمان آزاد بنا به درخواست گردشگربا هماهنگی قبلی توسط تلفن /پیام رسان
+                <input class="form-check-input" type="radio" name="timeDance" [value]="true"
+                    [(ngModel)]="rule.timeDance">
+            </label>
+        </div>
+        <div class="form-group ">
+            <label class="form-check-inline">
+                ب: زمان های تعیین شده قابل اطلاع به وسیله تماس تلفنی /پیام رسان
+                <input class="form-check-input" type="radio" name="timeDance" [value]="false"
+                    [(ngModel)]="rule.timeDance">
+            </label>
+        </div>
+
+        <h4 style="margin-left: 120px;width: auto;margin-top: 20px;"> مشخصات مکان </h4>
+        <div class="form-group row">
+
+            <div class="col-sm-10">
+                <input class="form-control" id="inputPassword3" name="location" [(ngModel)]="rule.location"
+                    style="margin-left: 500px;width: 40%;">
+            </div>
+            <label for="inputPassword3" class="col-sm-2 col-form-label">نام مکان</label>
+        </div>
+
+
+        <div class="form-group ">
+            <label class="form-check-inline"> تلفن ثابت و همراه هنرمند یا هنرمندان ساکن در محل یا مدیران اجرایی برنامه
+            </label>
+            <input class="form-control" id="inputPassword3" name="tell" [(ngModel)]="rule.tell"
+                style="margin-left: 500px;width: 34%;">
+        </div>
+
+        <div class="form-group ">
+            <label class="form-check-inline"> استان
+            </label>
+            <input class="form-control" id="inputPassword3" name="state" [(ngModel)]="rule.state"
+                style="margin-left: 500px;width: 34%;">
+        </div>
+
+        <div class="form-group ">
+            <label class="form-check-inline"> شهرستان
+            </label>
+            <input class="form-control" id="inputPassword3" name="city" [(ngModel)]="rule.city"
+                style="margin-left: 500px;width: 34%;">
+        </div>
+
+        <div class="form-group ">
+            <label class="form-check-inline"> روستا
+            </label>
+            <input class="form-control" id="inputPassword3" name="village" [(ngModel)]="rule.village"
+                style="margin-left: 500px;width: 34%;">
+        </div>
+
+        <div class="form-group ">
+            <label class="form-check-inline"> آدرس کامل
+            </label>
+            <input class="form-control" id="inputPassword3" name="fullAddress" [(ngModel)]="rule.fullAddress"
+                style="margin-left: 500px;width: 34%;">
+        </div>
+
+        <div class="form-group ">
+            <label class="form-check-inline"> عرض جغرافیای
+            </label>
+            <input class="form-control" id="inputPassword3" name="locationE" [(ngModel)]="rule.locationE"
+                style="margin-left: 500px;width: 34%;">
+        </div>
+
+        <div class="form-group ">
+            <label class="form-check-inline"> طول جغرافیایی
+            </label>
+            <input class="form-control" id="inputPassword3" name="locationN" [(ngModel)]="rule.locationN"
+                style="margin-left: 500px;width: 34%;">
+        </div>
+
+        <div class="alert alert-info"
+            style="text-align: center;" role="alert">
+            لطفا تمامی پرسش ها را پاسخ دهید
+        </div>
+
+
+
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle" style="margin-left: 160px;">مشاهده لیست نهایی
+                        </h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <h4 style="margin-left: 120px;width: auto;"> نوع اجرای حرکات موزون محلی و سنتی </h4>
+                        <label class="form-check-inline" *ngIf="rule.typeDance == true">
+                            اجرای گروهی توسط اجرا کنندگان حرفه ای
+                        </label>
+                        <label class="form-check-inline" *ngIf="rule.typeDance == false">
+                            اجراهای عمومی توسط ساکنان محلی
+                        </label>
+                        <h4 style="background-color: white; margin-left: 120px;width: auto;">سازهای همراهی کننده ی حرکات
+                            در این مکان
+                            عبارتند از </h4>
+                        <div *ngFor="let item of selectedArray; let i = index">
+                            <label class="form-check-inline">
+                                {{item.name}}
+                            </label>
+                        </div>
+
+                        <h4 style="background-color: white; margin-left: 120px;width: auto;">آیا در این مکان موسیقی سازی
+                            و آوازی نیز
+                            اجرا میشود؟ </h4>
+
+                        <label class="form-check-inline" *ngIf="rule.music == true">
+                            بله
+                        </label>
+                        <label class="form-check-inline" *ngIf="rule.music == false">
+                            خیر
+                        </label>
+
+                        <h4 style="background-color: white; margin-left: 120px;width: auto;">توضیح مختصری از نوع اجرا در
+                            این مکان
+                            ارایه نمایید </h4>
+                        <label class="form-check-inline">
+                            {{rule.description}}
+                        </label>
+
+                        <h4 style="background-color: white; margin-left: 120px;width: auto;margin-top: 20px;"> زمانهای
+                            برگزاری؟
+                        </h4>
+
+                        <label class="form-check-inline" *ngIf="rule.timeDance == true">
+                            الف: زمان آزاد بنا به درخواست گردشگربا هماهنگی قبلی توسط تلفن /پیام رسان
+
+                        </label>
+                        <label class="form-check-inline" *ngIf="rule.timeDance == false">
+                            ب: زمان های تعیین شده قابل اطلاع به وسیله تماس تلفنی /پیام رسان
+
+                        </label>
+                        <h4 style="background-color: white; margin-left: 120px;width: auto;margin-top: 20px;"> مشخصات
+                            مکان </h4>
+                        <label class="form-check-inline">
+                            نام مکان : {{rule.location}}
+                        </label>
+                        <label class="form-check-inline">
+                            تلفن ثابت و همراه هنرمند یا هنرمندان ساکن در محل یا مدیران اجرایی برنامه : {{rule.tell}}
+                        </label>
+                        <label class="form-check-inline">
+                            آدرس دقیق برای دسترسی شامل نام استان شهرستان روستا خیابان کچه بن بست پلاک :{{rule.adress}}
+                        </label>
+                        <div class="alert alert-danger" *ngIf="t==1" role="alert">
+                            شماره تلفن را به صورت عددی وارد نمایید
+                        </div>
+                        <div class="alert alert-danger" *ngIf="t==2" role="alert">
+                            لطفا یک یا چند ساز همراهی کننده را انتخاب کنید
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                        <button type="button" (click)="post(rule)" class="btn btn-primary">تایید نهایی</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-8 offset-md-2">
+                <button type="submit" style="width: 20%;margin-left: 65%;margin-top: 30px;" class="btn btn-lg btn-block"
+                    data-toggle="modal" data-target="#exampleModalLong">ثبت
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+<h2>{{userDetails.fullName}}</h2>
+
+<form [formGroup]="formModel" autocomplete="off" (submit)="onSubmit(userDetails.id)" style="background-color: #0067b8 !important; margin-top: 25px; margin-left: 600px; margin-right: 600px;">
+    <div class="form-group required">
+        <label>نام کاربری</label>
+        <input class="form-control" formControlName="UserName" value="{{userDetails.userName}}" >
+       
+    </div>
+
+    <div class="form-group">
+        <label>ایمیل</label>
+        <input class="form-control" formControlName="Email" value="{{userDetails.email}}">
+        
+    </div>
+    <div class="form-group">
+        <label>نام</label>
+        <input class="form-control" formControlName="FullName" value="{{userDetails.fullName}}">
+    </div>
+
+    <label style="color: azure">استان</label>
+    <br />
+    <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" dir="rtl"
+        class="custom-select custom-select-sm">
+        <option> لطفا استان را انتخاب نمایید</option>
+        <option *ngFor="let item of state; let i = index" style="color: black;" (click)="test(item.id)">{{item.name}}
+        </option>
+    </select>
+    <br />
+    <label style="color: azure">شهر</label>
+    <br />
+    <select id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" dir="rtl"
+        class="custom-select custom-select-sm">
+        <option> لطفا شهر را انتخاب نمایید</option>
+        <option *ngFor="let item of city; let i = index" style="color: black;" (click)="test1(item.id)">{{item.name}}
+        </option>
+    </select>
+
+    <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+            <button  style="width: 100px; color: #0067b8; background-color: #fff; border-color: transparent; border-radius: 0px;margin-left: 8px;" type="submit" class="btn btn-lg btn-block" type="submit" class="btn btn-lg btn-block" [disabled]="formModel.valid">ثبت </button>
+        </div>
+    </div>
+</form>

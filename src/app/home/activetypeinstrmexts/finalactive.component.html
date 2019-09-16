@@ -1,0 +1,21 @@
+<div id="container" style="width: 400px;">
+    <table class="normal">
+        <thead>
+            <tr>
+                <th style="width: 20px;">شماره ردیف</th>
+                <th>نام</th>
+                <th>توضیحات</th>
+                <th>بیشتر</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of type; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.comment}}</td>
+                <td> <button type="button" class="btn btn-primary" (click)="test(item.id)"
+                        style="margin-left: 5px">فعال</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

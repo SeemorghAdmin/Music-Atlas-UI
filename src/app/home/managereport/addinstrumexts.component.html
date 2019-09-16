@@ -1,31 +1,44 @@
-<form [formGroup]="service.formModelInstrumexts" autocomplete="off" (submit)="onSubmit()"
-  style="background-color: #2e3137; border-radius: 10px; margin-top: 25px; margin-left: 600px; margin-right: 600px;">
+<form #myForm [formGroup]="service.formModelInstrumexts" autocomplete="off" (submit)="onSubmit()"
+  style="background-color: #0067b8 !important; margin-top: 25px; margin-left: 600px; margin-right: 600px;">
   <div style="padding: 15px">
 
-
+<div>
+  <h3 style="color: azure">
+    اضافه کردن ساز
+  </h3>
+</div>
+    <select   id="ddl" style="width:200px; margin-right: 1%; margin-bottom: 10px; border-radius: 0px;" (change)="test($event.target.value)" dir="rtl"
+      class="custom-select custom-select-sm">
+      <option> لطفا نوع ساز را انتخاب نمایید</option>
+      <option *ngFor="let item of type; let i = index" style="color: black;" value="{{item.id}}" >{{item.name}}
+      </option>
+    </select>
 
     <div class="form-group">
       <label>نام</label>
-      <input class="form-control" formControlName="Name">
+      <input style="width: 40%; margin-left: 60%; border-radius: 0px;" class="form-control" formControlName="Name">
+    </div>
+
+    <div class="form-group">
+      <label>توضیحات</label>
+      <textarea [(ngModel)]="name"  style="direction: rtl; color: rgb(3, 0, 0); border-radius: 0px;" class="form-control" formControlName="Comment"
+        aria-label="With textarea"></textarea>
     </div>
 
 
-    <label>توضیحات</label>
-    <div class="input-group required">
-
-      <div class="input-group-prepend">
-
-      </div>
-      <textarea class="form-control" formControlName="Comment" aria-label="With textarea"></textarea>
-    </div>
-
-
-
-
+    <div  *ngIf="name != null" >
+      <app-upload  style=" width: 100px; "
+        (onUploadFinished)="uploadFinished($event)"></app-upload>
+      <img  src="http://178.22.123.86/maapi/{{this.response.dbPath}}" *ngIf="this.response.dbPath != null" width="200px"
+        height="200px">
+    </div> 
+ 
     <div class="form-row">
       <div class="form-group col-md-8 offset-md-2">
-        <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModelInstrumexts.valid">ثبت </button>
+        <button style="width: 100px; color: #0067b8; background-color: #fff; border-color: transparent; border-radius: 0px;margin-left: 8px;" type="submit" class="btn btn-lg btn-block"
+          [disabled]="!name">ثبت
+        </button>
       </div>
     </div>
   </div>
-</form>
+</form> 

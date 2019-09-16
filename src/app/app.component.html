@@ -1,2 +1,58 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<router-outlet></router-outlet>
+<nav id="navbar">
+        <div class="container">
+            <div class="nav-between">
+                <button type="button" class="btn-toggle-menu" onclick="dropdownMenu()"><i
+                        data-feather="menu"></i></button>
+                <a href="#">
+                    <img src="./LOGOATLAS.png" height="89">
+                </a>
+
+                <div class="dropdown-container" id="dropdownContainer">
+                    <div class="mobile-nav-head">
+                        <span>اطلس موسیقی</span>
+                    </div>
+                    <ul class="menu-dropdown">
+                        <li class="active">
+                            <a href="#">خانه</a>
+                        </li>
+                        <li>
+                            <a href="#">اطلس موسیقی</a>
+                        </li>
+                        <li>
+                            <a href="#">نوع ساز ها</a>
+                        </li>
+                        <li>
+                            <a href="#">آواز ها</a>
+                        </li>
+                        <li>
+                            <a href="#">درباره ما</a>
+                        </li>
+                        <li>
+                            <a href="#">تماس با ما</a>
+                        </li>
+                        <li>
+                            <a href="#">بیشتر <i data-feather="chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="#">موسیقی ایران</a></li>
+                                <li><a href="#">موسیقی نواحی</a></li>
+                                <li><a href="#">موسیقی سنتی</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="menu-right">
+                    <li class="menu-right-icon">
+                        <a href="#"><i data-feather="search"></i></a>
+                    </li>
+                    <li class="btn-signin" id="btnSignin">
+                        <a href="#">ورود/ثبت نام</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+    <router-outlet></router-outlet>

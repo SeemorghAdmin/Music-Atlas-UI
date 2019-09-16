@@ -2,13 +2,13 @@
 <div class="row" style="margin-bottom:15px;">
     <div class="col-md-3" style="padding-top: 10px;  padding-left: 20px">
       <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
-      <button type="button" class="btn btn-success" (click)="file.click()">آپلود فایل</button>
+      <button type="button" class="btn btn-success" style="width: 100px; color: #0067b8; background-color: #fff; border-color: transparent; border-radius: 0px; margin-right: 50px;" (click)="file.click()">آپلود فایل</button>
     </div>
     <div class="col-md-4">
-      <span class="upload" *ngIf="progress > 0">
+      <span style="color: azure; " class="upload" *ngIf="progress > 0">
         {{progress}}%
       </span>
-      <span class="upload" *ngIf="message">
+      <span style="color: azure;" class="upload" *ngIf="message">
         {{message}}
       </span>
     </div>

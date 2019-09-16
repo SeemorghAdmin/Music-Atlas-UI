@@ -1,0 +1,33 @@
+<div id="container" style="width: 400px;">
+    <h2>
+        مدیریت کاربران توسط رول 5
+    </h2>
+    <table class="normal">
+        <thead>
+            <tr>
+                <th style="width: 20px;">شماره ردیف</th>
+                <th>نام</th>
+                <th>توضیحات</th>
+
+                <th>بیشتر</th>
+                <th>مدیرت</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+
+            <tr *ngFor="let item of users; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{item.fullName}}</td>
+                <td>{{item.userRoleID}}</td>
+                <td> <button type="button" [routerLink]="['/home/edituser/', item.id]" class="btn btn-primary"
+                        style="margin-left: 5px">ویرایش</button> </td>
+
+        <td> <button type="button" (click)="deavtive(item.id)" class="btn btn-danger"
+              style="margin-left: 5px">غیر فعال کردن</button> </td>
+              </tr>
+
+        </tbody>
+    </table>
+</div>
