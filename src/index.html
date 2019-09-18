@@ -11,58 +11,9 @@
   <link rel="stylesheet" href="./assets/img/style.css">
   <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
     integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
-
-</head>
-
-
-<body>
-
-
-
-
-  <app-root></app-root>
-  </div>
-  <script>
-    feather.replace();
-
-    function dropdownMenu() {
-      var containerID = document.getElementById("dropdownContainer"),
-        btnSigninID = document.getElementById("btnSignin"),
-        menuRightIcon = document.getElementsByClassName("menu-right-icon");
-
-      /** Show/Hide dropdown menu */
-      containerID.classList.toggle("show");
-
-      /** Show/Hide Signin button */
-      btnSigninID.classList.toggle("show");
-
-      /** Show/Hide icon Search and Shopping cart */
-      for (var i = 0; i < menuRightIcon.length; i++) {
-        menuRightIcon[i].classList.toggle("hide");
-      }
-    }
-
-    $('.owl-carousel').owlCarousel({
-      responsiveClass: true,
-      rtl: true,
-      loop: false,
-      margin: 10,
-      nav: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 3
-        },
-        1000: {
-          items: 5
-        }
-      }
-    })
-  </script>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <link rel="stylesheet" href="./assets/img/owl.carousel.min.css"> 
+    <link rel="stylesheet" href="./assets/img/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -74,7 +25,57 @@
     <script src="./assets/img/jquery.min.js"></script>
     <script src="./assets/img/owl.carousel.min.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
-  <script src="./assets/img/main.js"></script>
+  
+</head>
+
+
+<body>
+
+
+
+
+  <app-root></app-root>
+ 
+  <script>
+    feather.replace();
+
+    function dropdownMenu() {
+        var containerID = document.getElementById("dropdownContainer"),
+            btnSigninID = document.getElementById("btnSignin"),
+            menuRightIcon = document.getElementsByClassName("menu-right-icon");
+
+        /** Show/Hide dropdown menu */
+        containerID.classList.toggle("show");
+
+        /** Show/Hide Signin button */
+        btnSigninID.classList.toggle("show");
+
+        /** Show/Hide icon Search and Shopping cart */
+        for (var i = 0; i < menuRightIcon.length; i++) {
+            menuRightIcon[i].classList.toggle("hide");
+        }
+    }
+  
+    $('.owl-carousel').owlCarousel({
+        responsiveClass: true,
+        rtl: true,
+        loop: false,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    })
+</script>
+ 
 </body>
 
 </html>

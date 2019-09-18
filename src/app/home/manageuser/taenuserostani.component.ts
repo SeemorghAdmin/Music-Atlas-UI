@@ -11,6 +11,7 @@ export class TaenKarbaranComponent implements OnInit {
     
 
     test(id) {
+        console.log(id);
         this.http.put('http://178.22.123.86/maapi/api/TaedUserOstani/' + id, id).subscribe(
             res => {
                 if (res == true) {

@@ -45,11 +45,13 @@ import { MaktabComponent } from './home/modiriatgozareshmakanha/maktab.component
 import { MusicLockComponent } from './home/modiriatgozareshmakanha/musiclock.component';
 import { DanceComponent } from './home/modiriatgozareshmakanha/dance.component';
 import { AddKargahComponent } from './home/managekargah/kargah.component';
+import { DetailInstrumentComponent } from './homepage/detialinstrument.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'homepage', component: HomePageComponent },
+  
   { path: 'detialsinstrumexts', component: DetialsInstrumextsComponent },
   { path: 'detialsinstrumexts/:id', component: DetialsInstrumextsComponent },
   { path: 'user', redirectTo: '/user/login', pathMatch: 'full' },

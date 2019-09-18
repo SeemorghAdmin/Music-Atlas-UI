@@ -55,11 +55,12 @@ import { MaktabComponent } from './home/modiriatgozareshmakanha/maktab.component
 import { MusicLockComponent } from './home/modiriatgozareshmakanha/musiclock.component';
 import { DanceComponent } from './home/modiriatgozareshmakanha/dance.component';
 import { AddKargahComponent } from './home/managekargah/kargah.component';
+import { DetailInstrumentComponent } from './homepage/detialinstrument.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent, DetailInstrumentComponent,
     UserComponent,
     RegistrationComponent,
     LoginComponent,

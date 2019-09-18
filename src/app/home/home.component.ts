@@ -20,6 +20,9 @@ export class HomeComponent implements OnInit {
   users;
   useracv
   message;
+  acv;
+  role;
+  name;
 
   constructor(private router: Router, private service: UserService, private messageS: MessageService, private http : HttpClient) { }
 
@@ -27,7 +30,11 @@ export class HomeComponent implements OnInit {
      this.service.getUserProfile().subscribe(
       res => {
         this.userDetails = res;
-
+        if (this.userDetails.active == true) {
+          this.acv = true;
+        }
+        this.role = this.userDetails.userRoleID;
+        this.name = this.userDetails.fullName;
        /* this.messageS.getMesaage(this.userDetails.id).subscribe(
           res => {
             this.message = res;
@@ -39,10 +46,14 @@ export class HomeComponent implements OnInit {
         );*/
 
          if (this.userDetails.userRoleID == 1 || this.userDetails.userRoleID == 2) {
-           this.http.get('http://178.22.123.86/maapi/api/account').subscribe(res => { this.users = res; });
-
-           this.http.get('http://178.22.123.86/maapi/api/ActiveAccount').subscribe(res => { this.useracv = res })
-         } 
+           this.http.get('http://178.22.123.86/maapi/api/account/Getleght').subscribe(res => { this.users = res;});
+            
+            
+           this.http.get('http://178.22.123.86/maapi/api/ActiveAccount/Getleght').subscribe(res => { this.useracv = res;}); 
+          
+          
+           
+         }  
         
       },
     err => {
@@ -55,6 +66,6 @@ export class HomeComponent implements OnInit {
 
   onLogout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/user/login']);
+    this.router.navigate(['/homepage']);
   }
 }

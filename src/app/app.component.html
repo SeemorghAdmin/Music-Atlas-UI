@@ -5,7 +5,7 @@
                 <button type="button" class="btn-toggle-menu" onclick="dropdownMenu()"><i
                         data-feather="menu"></i></button>
                 <a href="#">
-                    <img src="./../assets/img/LOGOATLAS.png" height="89">
+                    <img src="./assets/img/LOGOATLAS.png" height="89">
                 </a>
 
                 <div class="dropdown-container" id="dropdownContainer">
@@ -16,7 +16,7 @@
                         <li class="active">
                             <a href="#">خانه</a>
                         </li>
-                        <li>
+                       <!-- <li>
                             <a href="#">اطلس موسیقی</a>
                         </li>
                         <li>
@@ -38,16 +38,17 @@
                                 <li><a href="#">موسیقی نواحی</a></li>
                                 <li><a href="#">موسیقی سنتی</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
-
+ 
                 <ul class="menu-right">
                     <li class="menu-right-icon">
                         <a href="#"><i data-feather="search"></i></a>
                     </li>
                     <li class="btn-signin" id="btnSignin">
-                        <a href="#">ورود/ثبت نام</a>
+                        <a  routerLink='/user' *ngIf="login == false" >ورود/ثبت نام</a>
+                        <a  routerLink='/user' *ngIf="login == true" >پنل کاربری</a>
                     </li>
                 </ul>
             </div>
