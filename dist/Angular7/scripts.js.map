@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///src/assets/img/main.js"],"names":[],"mappings":"AAAA;AACA;;AAEA","file":"scripts.js","sourcesContent":["// This is \"probably\" IE9 compatible but will need some fallbacks for IE8\r\n// - (event listeners, forEach loop)\r\n\r\n// wait for the entire page to finish loading\r\n\r\n\r\n"],"sourceRoot":""}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"scripts.js","sourcesContent":[],"sourceRoot":""}

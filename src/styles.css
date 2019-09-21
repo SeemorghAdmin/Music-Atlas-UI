@@ -18,7 +18,7 @@
  }
 
 body{
-    background-color: rgb(116, 38, 38);
+    background-color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin:0;
 	  padding:0;
@@ -38,9 +38,10 @@ input.form-control:focus{
 }
 
 button[type=submit].btn{
-    border-radius: 20px;
-    background-color: #04c582;
+    border-radius: 10px;
+    background-color: #686868;
     color: #fff;
+    margin-left: 56px; 
 }
 
 div.form-group label:not(.text-danger){
@@ -65,12 +66,13 @@ div.form-group.required>label:first-child:after{
     justify-content: center;
     width: 100%;
     padding: 20px;
+    background-color: rgb(158, 148, 145)
   }
 
   .wrapped-div {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #2e3137;
+    background: #cac1c1;
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -106,7 +108,7 @@ div.form-group.required>label:first-child:after{
   }
 
   form{
-      margin: 0px 16px;
+      margin: 10px 10px;
   }
 
  div.form-group input.invalid{
@@ -143,7 +145,7 @@ th,td{
 }
 
 tbody tr:nth-child(even){
-  background:rgb(255, 255, 255);
+  background:#ECF0F1;
 }
 
 tbody tr:hover{
@@ -167,8 +169,6 @@ table, th, td {
   
 }
 
-.logo
-{
-margin-right: 0px;
+#login-form {
+  margin: 10px auto; 
 }
-
