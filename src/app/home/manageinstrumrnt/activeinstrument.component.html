@@ -1,0 +1,26 @@
+<div id="container" style="width: 550px;">
+    <table class="normal">
+        <thead>
+            <tr>
+                <th>ردیف</th>
+                <th style="width: 60px;">نام</th>
+                <th>توضیحات</th>
+                <th>تصاویر</th>
+                <th>بیشتر</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of ins; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.comment}}</td>
+                <td>
+                    <img src="http://178.22.123.86/maapi/{{item.fileUrl}}" width="200px" height="200px">
+                </td>
+                <td style="text-align: center"> <button type="button" class="btn btn-danger"
+                        (click)="taed(item.id)">تایید</button> </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
