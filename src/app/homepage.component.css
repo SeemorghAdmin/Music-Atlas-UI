@@ -8,6 +8,7 @@ body{
     height: 400px;
     overflow: hidden;
     display: inline-table; 
+    padding-top: 383px;
   }
   .middle{
     position: absolute;
@@ -80,8 +81,8 @@ body{
 
   .navar-slider{
     background-color:rgb(158, 148, 145);
-    height:700px;
+    height:710px;
     width:100%;
-   margin-top: 81px;
+   margin-top: 10px;
 
 }
