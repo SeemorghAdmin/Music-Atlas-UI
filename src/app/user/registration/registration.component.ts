@@ -2,6 +2,9 @@ import { UserService } from './../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
+import { DialogComponent } from './popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +15,7 @@ export class RegistrationComponent implements OnInit {
 state;
 city;
 cityid;
-  constructor(public service: UserService, private toastr: ToastrService, private http: HttpClient) { }
+  constructor(public service: UserService, private toastr: ToastrService, private http: HttpClient, private dialg: MatDialog, private router: Router) { }
 
   ngOnInit() {
     this.service.formModel.reset();
@@ -41,6 +44,9 @@ cityid;
         if (res.succeeded) {
           this.service.formModel.reset();
           this.toastr.success('مشخصات شما در سایت ثبت شد پس از تایید مدیریت سایت، امکان ورود شما ممکن خواهد بود.');
+          this.router.navigate(['/homepage']);
+        } else if (res == false) {
+          this.toastr.error('کد ملی تکراری است');
         } else {
           res.errors.forEach(element => {
             switch (element.code) {
@@ -54,6 +60,8 @@ cityid;
             }
           });
         }
+
+       
       },
       err => {
         console.log(err);

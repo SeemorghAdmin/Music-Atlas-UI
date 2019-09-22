@@ -15,7 +15,7 @@ export class ListUserTaedNashodeComponent implements OnInit {
                 if (res == true) {
                     window.location.reload();
                 }
-            }
+            } 
         )
     }
 
