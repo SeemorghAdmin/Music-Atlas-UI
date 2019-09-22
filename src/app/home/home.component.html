@@ -4,7 +4,7 @@
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
- 
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="acv == true">
     <ul class="navbar-nav mr-auto">
@@ -17,8 +17,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown"
           style="direction: rtl; margin-left: 700px; width: 60px;">
-          <a class="dropdown-item" routerLink='/home/afzodan' *ngIf="role == 10"
-            [routerLinkActive]="['active']">افزودن کاربر</a>
+          <a class="dropdown-item" routerLink='/home/afzodan' *ngIf="role == 10" [routerLinkActive]="['active']">افزودن
+            کاربر</a>
 
 
 
@@ -31,18 +31,16 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/afzodangozaresh' [routerLinkActive]="['active']"
-          *ngIf="role == 10" style="padding-left: 900px">افزودن گزارش</a>
+        <a class="nav-link" routerLink='/home/afzodangozaresh' [routerLinkActive]="['active']" *ngIf="role == 10"
+          style="padding-left: 900px">افزودن گزارش</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/listperson' *ngIf="role == 10"
-          [routerLinkActive]="['active']">کاربران</a>
+        <a class="nav-link" routerLink='/home/listperson' *ngIf="role == 10" [routerLinkActive]="['active']">کاربران</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/sendmessage' *ngIf="role == 10"
-          [routerLinkActive]="['active']">پیام</a>
+        <a class="nav-link" routerLink='/home/sendmessage' *ngIf="role == 10" [routerLinkActive]="['active']">پیام</a>
       </li>
 
       <li class="nav-item">
@@ -57,13 +55,13 @@
 
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/listgozaresh' *ngIf="role == 10"
-          [routerLinkActive]="['active']">لیست گزارش</a>
+        <a class="nav-link" routerLink='/home/listgozaresh' *ngIf="role == 10" [routerLinkActive]="['active']">لیست
+          گزارش</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/listkrga'
-          *ngIf="role == 2 || role == 1 " [routerLinkActive]="['active']">لیست
+        <a class="nav-link" routerLink='/home/listkrga' *ngIf="role == 2 || role == 1 "
+          [routerLinkActive]="['active']">لیست
           کارگاه</a>
       </li>
 
@@ -78,13 +76,13 @@
           مدیریت گزارش مکان ها
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-right: 500px;">
-          <a class="dropdown-item" routerLink='/home/maktab' *ngIf="role == 1"
-            [routerLinkActive]="['active']">اضافه کردن مکتب خانه</a>
-          <a class="dropdown-item" routerLink='/home/musiclock' *ngIf="role == 1"
-            [routerLinkActive]="['active']">اضافه کردن اماکن خوانندگی </a>
+          <a class="dropdown-item" routerLink='/home/maktab' *ngIf="role == 1" [routerLinkActive]="['active']">اضافه
+            کردن مکتب خانه</a>
+          <a class="dropdown-item" routerLink='/home/musiclock' *ngIf="role == 1" [routerLinkActive]="['active']">اضافه
+            کردن اماکن خوانندگی </a>
 
-          <a class="dropdown-item" routerLink='/home/dance' *ngIf=" role == 1"
-            [routerLinkActive]="['active']"> اماکن اجرای حرکات موزون</a>
+          <a class="dropdown-item" routerLink='/home/dance' *ngIf=" role == 1" [routerLinkActive]="['active']"> اماکن
+            اجرای حرکات موزون</a>
 
           <a class="dropdown-item" routerLink='/home/kargah' *ngIf=" role == 1"
             [routerLinkActive]="['active']">کارگاه</a>
@@ -92,22 +90,22 @@
       </li>
 
 
-      <li class="nav-item dropdown" *ngIf="role == 1 ">
+      <li class="nav-item dropdown" *ngIf="role == 5 ">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           مدیریت شهر و استان
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-right: 500px;">
-          <a class="dropdown-item" routerLink='/home/liststate' *ngIf="role == 1"
-            [routerLinkActive]="['active']">لیست استان </a>
-          <a class="dropdown-item" routerLink='/home/addstate' *ngIf="role == 1"
-            [routerLinkActive]="['active']">اضافه کردن استان </a>
+          <a class="dropdown-item" routerLink='/home/liststate' *ngIf="role == 5" [routerLinkActive]="['active']">لیست
+            استان </a>
+          <a class="dropdown-item" routerLink='/home/addstate' *ngIf="role == 5" [routerLinkActive]="['active']">اضافه
+            کردن استان </a>
 
-          <a class="dropdown-item" routerLink='/home/listcity' *ngIf=" role == 1"
-            [routerLinkActive]="['active']">لیست شهر</a>
+          <a class="dropdown-item" routerLink='/home/listcity' *ngIf=" role == 5" [routerLinkActive]="['active']">لیست
+            شهر</a>
 
-          <a class="dropdown-item" routerLink='/home/addcity' *ngIf=" role == 1"
-            [routerLinkActive]="['active']">اضافه کردن شهر</a>
+          <a class="dropdown-item" routerLink='/home/addcity' *ngIf=" role == 5" [routerLinkActive]="['active']">اضافه
+            کردن شهر</a>
         </div>
       </li>
 
@@ -116,18 +114,15 @@
 
 
 
-      <li class="nav-item dropdown"
-        *ngIf="role == 2 || role == 1 || role == 3">
+      <li class="nav-item dropdown" *ngIf="role == 2 || role == 1 || role == 3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           مدیریت آواز
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-right: 500px;">
-          <a class="dropdown-item" routerLink='/home/typeavaz'
-            *ngIf="role == 2 || role == 1 || role == 3"
+          <a class="dropdown-item" routerLink='/home/typeavaz' *ngIf="role == 2 || role == 1 || role == 3"
             [routerLinkActive]="['active']">لیست نوع آواز</a>
-          <a class="dropdown-item" routerLink='/home/addtypeavaz'
-            *ngIf="role == 2 || role == 1 || role == 3"
+          <a class="dropdown-item" routerLink='/home/addtypeavaz' *ngIf="role == 2 || role == 1 || role == 3"
             [routerLinkActive]="['active']">اضافه کردن نوع آواز </a>
 
           <a class="dropdown-item" routerLink='/home/activetypeavaz' *ngIf=" role == 1"
@@ -139,34 +134,35 @@
       </li>
 
 
-      <li class="nav-item dropdown"
-        *ngIf="role == 2 || role == 1 || role == 3">
+      <li class="nav-item dropdown" *ngIf="role == 2 || role == 1 || role == 3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           مدیریت ساز
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-right: 500px;">
-          <a class="dropdown-item" routerLink='/home/instrumexts'
-            *ngIf="role == 2 || role == 1 || role == 3"
+          <a class="dropdown-item" routerLink='/home/instrumexts' *ngIf="role == 2 || role == 1 || role == 3"
             [routerLinkActive]="['active']">لیست ساز</a>
 
-          <a class="dropdown-item" routerLink='/home/addinstrumexts'
-            *ngIf="role == 2 || role == 1 || role == 3"
+          <a class="dropdown-item" routerLink='/home/taedinstrument' *ngIf="role == 2 || role == 1 "
+            [routerLinkActive]="['active']">تایید کردن ساز</a> 
+
+          <a class="dropdown-item" routerLink='/home/activeinstrument' *ngIf=" role == 1 "
+            [routerLinkActive]="['active']">فعال کردن ساز</a>
+
+
+          <a class="dropdown-item" routerLink='/home/addinstrumexts' *ngIf="role == 2 || role == 1 || role == 3"
             [routerLinkActive]="['active']">اضافه کردن ساز</a>
 
           <div class="dropdown-divider"></div>
-        
-          <a class="dropdown-item" routerLink='/home/typeinstrumexts'
-            *ngIf="role == 2 || role == 1 || role == 3"
+          <a class="dropdown-item" routerLink='/home/typeinstrumexts' *ngIf="role == 2 || role == 1 || role == 3"
             [routerLinkActive]="['active']">لیست نوع ساز</a>
-          <a class="dropdown-item" routerLink='/home/addtypeinsttrumexts'
-            *ngIf="role == 2 || role == 1 || role == 3"
+          <a class="dropdown-item" routerLink='/home/addtypeinsttrumexts' *ngIf="role == 2 || role == 1 || role == 3"
             [routerLinkActive]="['active']">اضافه کردن نوع ساز </a>
-          <a class="dropdown-item" routerLink='/home/activetypeinstrmexts'
+          <!--<a class="dropdown-item" routerLink='/home/activetypeinstrmexts'
             *ngIf="role == 2  || role == 1 " [routerLinkActive]="['active']">تایید
+            کردن نوع ساز </a> -->
+          <a class="dropdown-item" routerLink='/home/finalactive' *ngIf="role == 1" [routerLinkActive]="['active']">تایید
             کردن نوع ساز </a>
-          <a class="dropdown-item" routerLink='/home/finalactive' *ngIf="role == 1"
-            [routerLinkActive]="['active']">فعال کردن نوع ساز </a>
         </div>
       </li>
 
@@ -174,8 +170,7 @@
 
 
 
-      <li class="nav-item dropdown"
-        *ngIf="role == 2 || role == 1 || role == 5">
+      <li class="nav-item dropdown" *ngIf="role == 2 || role == 1 || role == 5">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           مدیریت کاربران
@@ -184,15 +179,20 @@
           <a class="dropdown-item" routerLink='/home/activeaccount' *ngIf="role == 1 "
             [routerLinkActive]="['active']"><span style="color: red"> {{useracv}}</span>کاربران غیر فعال</a>
 
-          <a class="dropdown-item" routerLink='/home/listusertaednashode'
-            *ngIf="role == 2 || role == 1" [routerLinkActive]="['active']"><span
-              style="color: red"> {{users}}</span> کاربران تایید نشده</a>
+          <a class="dropdown-item" routerLink='/home/listusertaednashode' *ngIf="role == 2 || role == 1"
+            [routerLinkActive]="['active']"><span style="color: red"> {{users}}</span> کاربران تایید نشده</a>
 
           <a class="dropdown-item" routerLink='/home/taeduserostani' *ngIf="role == 1"
             [routerLinkActive]="['active']"><span style="color: red"> {{users}}</span> تخصیص رول استانی</a>
 
-          <a class="dropdown-item" routerLink='/home/manageuser' *ngIf="role == 5"
-            [routerLinkActive]="['active']"><span style="color: red"></span> مدیریت کاربران</a>
+          <a class="dropdown-item" routerLink='/home/userroletow' *ngIf="role == 1"
+            [routerLinkActive]="['active']">مدیران استانی</a>
+
+          <a class="dropdown-item" routerLink='/home/userroletherry' *ngIf="role == 1"
+            [routerLinkActive]="['active']">کاربران استانی</a>
+
+          <a class="dropdown-item" routerLink='/home/manageuser' *ngIf="role == 5" [routerLinkActive]="['active']"><span
+              style="color: red"></span> مدیریت کاربران</a>
 
 
 
@@ -200,14 +200,12 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home'
-          *ngIf="role == 2 || role == 1 || role == 3"
+        <a class="nav-link" routerLink='/home/mypanel' *ngIf="role == 2 || role == 1 || role == 3"
           [routerLinkActive]="['active']">پنل کاربری </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink='/home/upload' *ngIf="role == 10"
-          [routerLinkActive]="['active']">آپلود</a>
+        <a class="nav-link" routerLink='/home/upload' *ngIf="role == 10" [routerLinkActive]="['active']">آپلود</a>
       </li>
 
     </ul>

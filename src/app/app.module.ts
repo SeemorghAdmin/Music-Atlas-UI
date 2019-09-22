@@ -56,12 +56,18 @@ import { MusicLockComponent } from './home/modiriatgozareshmakanha/musiclock.com
 import { DanceComponent } from './home/modiriatgozareshmakanha/dance.component';
 import { AddKargahComponent } from './home/managekargah/kargah.component';
 import { DetailInstrumentComponent } from './homepage/detialinstrument.component';
-
+import { UserRoleTowComponent } from './home/manageuser/userroletow.component';
+import { UserRoleTherryComponent } from './home/manageuser/userroletherry.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './user/registration/popup.component';
+import { TaedInstrumentComponent } from './home/manageinstrumrnt/taedinstrument.component';
+import { ActiveInstrumentComponent } from './home/manageinstrumrnt/activeinstrument.component';
+import { MyPanelComponent } from './home/mypanel/mypanel.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DetailInstrumentComponent,
-    UserComponent,
+    AppComponent, DetailInstrumentComponent, UserRoleTowComponent, UserRoleTherryComponent, DialogComponent,
+    UserComponent,TaedInstrumentComponent, ActiveInstrumentComponent, MyPanelComponent,
     RegistrationComponent,
     LoginComponent,
     AfzodanComponent,
@@ -103,7 +109,7 @@ import { DetailInstrumentComponent } from './homepage/detialinstrument.component
     ModiryatGozareshComponent, MaktabComponent, MusicLockComponent, DanceComponent, AddKargahComponent
   ],
   imports: [
-    MatButtonModule,
+    MatButtonModule, MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -122,6 +128,7 @@ import { DetailInstrumentComponent } from './homepage/detialinstrument.component
     useClass: AuthInterceptor,
     multi: true
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }

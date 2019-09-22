@@ -46,7 +46,11 @@ import { MusicLockComponent } from './home/modiriatgozareshmakanha/musiclock.com
 import { DanceComponent } from './home/modiriatgozareshmakanha/dance.component';
 import { AddKargahComponent } from './home/managekargah/kargah.component';
 import { DetailInstrumentComponent } from './homepage/detialinstrument.component';
-
+import { UserRoleTowComponent } from './home/manageuser/userroletow.component';
+import { UserRoleTherryComponent } from './home/manageuser/userroletherry.component';
+import { TaedInstrumentComponent } from './home/manageinstrumrnt/taedinstrument.component';
+import { ActiveInstrumentComponent } from './home/manageinstrumrnt/activeinstrument.component';
+import { MyPanelComponent } from './home/mypanel/mypanel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -88,7 +92,7 @@ const routes: Routes = [
       { path: 'edittypeinstrumexts/:id', component: EditTypeInstrumexts },
       { path: 'listusertaednashode', component: ListUserTaedNashodeComponent },
       { path: 'activeaccount', component: ActiveAccountComponent},
-      { path: 'activetypeinstrmexts', component: ActiveTypeInxComponent },
+     // { path: 'activetypeinstrmexts', component: ActiveTypeInxComponent },
       { path: 'finalactive', component: FinalActiveComponent },
       { path: 'typeavaz', component: TypeAvazComponent },
       { path: 'addtypeavaz', component: AddTypeAvazComponent },
@@ -107,6 +111,11 @@ const routes: Routes = [
       { path: 'musiclock', component: MusicLockComponent },
       { path: 'dance', component: DanceComponent },
       { path: 'kargah', component: AddKargahComponent },
+      { path: 'userroletow', component: UserRoleTowComponent},
+      { path: 'userroletherry', component: UserRoleTherryComponent},
+      { path: 'taedinstrument', component: TaedInstrumentComponent},
+      { path: 'activeinstrument', component: ActiveInstrumentComponent},
+      { path: 'mypanel', component: MyPanelComponent},
     ],
 
   },

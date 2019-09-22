@@ -4,26 +4,22 @@
             <tr>
                 <th style="width: 20px;">شماره ردیف</th>
                 <th>نام</th>
-                <th>توضیحات</th>
+                <th>استان</th>
 
-                <th>بیشتر</th>
+                <th>شهرستان</th>
+                <th>مدیریت</th>
             </tr>
         </thead>
         <tbody>
-
-
-
             <tr *ngFor="let item of users; let i = index">
                 <td>{{ i + 1 }}</td>
                 <td>{{item.fullName}}</td>
-                <td>{{item.userRoleID}}</td>
+                <td>{{item.stateUser}}</td>
+                <td>{{item.cityUser}}</td>
                 <td > <button type="button"
                         (click)="test(item.id)" class="btn btn-primary"
                         style="margin-left: 5px">ارتقا</button> </td>
-            
-
             </tr>
-
         </tbody>
     </table>
 </div>
