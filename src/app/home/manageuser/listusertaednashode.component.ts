@@ -16,7 +16,7 @@ export class ListUserTaedNashodeComponent implements OnInit {
                     window.location.reload();
                 }
             } 
-        )
+        );
     }
 
     ngOnInit() {

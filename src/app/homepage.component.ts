@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     
-    this.htttp.get('http://178.22.123.86/maapi/api/Instrumexts').subscribe(
+    this.htttp.get('http://localhost:54277/api/Instrumexts').subscribe(
           res => {
               this.instrumexts = res;
           }

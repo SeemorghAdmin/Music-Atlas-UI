@@ -18,7 +18,11 @@
                     <img src="http://178.22.123.86/maapi/{{item.fileUrl}}" width="200px" height="200px">
                 </td>
                 <td style="text-align: center"> <button type="button" class="btn btn-danger"
-                        (click)="taed(item.id)">فعال</button> </td>
+                        (click)="taed(item.id)">فعال</button>
+                <td style="text-align: center"> <button type="button" class="btn btn-danger"
+                        (click)="delete(item.id)">حذف</button>
+                    <button type="button" [routerLink]="['/home/editinstrumexts/', item.id]" class="btn  btn-primary"
+                        style="margin-left: 5px">ویرایش</button></td>
             </tr>
 
         </tbody>

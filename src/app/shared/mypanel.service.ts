@@ -7,23 +7,39 @@ import { HttpClient } from "@angular/common/http";
 })
 
 export class MyPanelService {
-    constructor (private http: HttpClient){}
+    constructor(private http: HttpClient) { }
 
-    readonly BaseURI = 'http://localhost:54277/api';
+    readonly BaseURI = 'http://178.22.123.86/maapi/api';
 
-    getCount(){
+    getCount() {
         return this.http.get(this.BaseURI + '/MyReport');
     }
-    
-    getSaz(){
+
+    getSaz() {
         return this.http.get(this.BaseURI + '/MyReport/Saz');
     }
 
-    getTypeSaz(){
+    getTypeSaz() {
         return this.http.get(this.BaseURI + '/MyReport/TypeSaz');
     }
-    
-    getTypeAvaz(){
+
+    getTypeAvaz() {
         return this.http.get(this.BaseURI + '/MyReport/TypeAvaz');
+    }
+
+    getMusicLoc() {
+        return this.http.get(this.BaseURI + '/MyReport/MusicLoc');
+    }
+
+    getMaktab() {
+        return this.http.get(this.BaseURI + '/MyReport/Maktab');
+    }
+
+    getKargah() {
+        return this.http.get(this.BaseURI + '/MyReport/KargahSakht');
+    }
+
+    getDancetable() {
+        return this.http.get(this.BaseURI + '/MyReport/DanceTable');
     }
 }

@@ -16,6 +16,7 @@ export class AddInstrumexts implements OnInit {
 
   typeid;
   type;
+  
 
   public response: { dbPath: '' };
   public uploadFinished = (event) => {
@@ -23,7 +24,7 @@ export class AddInstrumexts implements OnInit {
   };
 
   test(id) {
- this.typeid = id;
+    this.typeid = id;
     console.log(this.typeid);
   }
 

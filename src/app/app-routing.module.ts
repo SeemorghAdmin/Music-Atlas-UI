@@ -51,6 +51,9 @@ import { UserRoleTherryComponent } from './home/manageuser/userroletherry.compon
 import { TaedInstrumentComponent } from './home/manageinstrumrnt/taedinstrument.component';
 import { ActiveInstrumentComponent } from './home/manageinstrumrnt/activeinstrument.component';
 import { MyPanelComponent } from './home/mypanel/mypanel.component';
+import { UserOstanComponent } from './home/manageuser/userostan.component';
+import { AuthGuard2 } from './auth/auth.service';
+import { AuthGuard3 } from './auth/authuser.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -68,54 +71,58 @@ const routes: Routes = [
   },
 
 
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate : [AuthGuard] },
   {
     path: 'home', component: HomeComponent,
     children: [
-      { path: 'afzodan', component: AfzodanComponent },
-      { path: 'afzodangozaresh', component: AfzodanGozaresh },
-      { path: 'listperson', component: PersonComponent },
-      { path: 'personedit/:id', component: PersonEdit },
-      { path: 'upload', component: UploadComponent },
-      { path: 'listgozaresh', component: GozareshComponent },
-      { path: 'detialsgozaresh/:id', component: DetialsComponent },
-      { path: 'sendmessage', component: SendMessage },
-      { path: 'addtypemusiclocal', component: AddTypeMusicLocal },
-      { path: 'listtypemusiclocal', component: ListTypeMusicLocal },
-      { path: 'edittypemusiclocal/:id', component: EditTypeMusicLocal },
-      { path: 'instrumexts', component: InstrumextsType },
-      { path: 'addinstrumexts', component: AddInstrumexts },
-      { path: 'editinstrumexts', component: EditInstrumexts },
-      { path: 'editinstrumexts/:id', component: EditInstrumexts },
-      { path: 'typeinstrumexts', component: TypeInstrumextsType },
-      { path: 'addtypeinsttrumexts', component: AddTypeInstrumexts },
-      { path: 'edittypeinstrumexts/:id', component: EditTypeInstrumexts },
-      { path: 'listusertaednashode', component: ListUserTaedNashodeComponent },
-      { path: 'activeaccount', component: ActiveAccountComponent},
+      { path: 'afzodan', component: AfzodanComponent, canActivate: [AuthGuard] },
+      { path: 'afzodangozaresh', component: AfzodanGozaresh, canActivate: [AuthGuard] },
+      { path: 'listperson', component: PersonComponent, canActivate: [AuthGuard2] },
+      { path: 'personedit/:id', component: PersonEdit, canActivate: [AuthGuard2] },
+      { path: 'upload', component: UploadComponent, canActivate: [AuthGuard] },
+      { path: 'listgozaresh', component: GozareshComponent, canActivate: [AuthGuard] },
+      { path: 'detialsgozaresh/:id', component: DetialsComponent, canActivate: [AuthGuard] },
+      { path: 'sendmessage', component: SendMessage, canActivate: [AuthGuard] },
+      { path: 'addtypemusiclocal', component: AddTypeMusicLocal, canActivate: [AuthGuard] },
+      { path: 'listtypemusiclocal', component: ListTypeMusicLocal, canActivate: [AuthGuard] },
+      { path: 'edittypemusiclocal/:id', component: EditTypeMusicLocal, canActivate: [AuthGuard3] },
+      // canActivate: [AuthGuard2]
+      { path: 'instrumexts', component: InstrumextsType, canActivate: [AuthGuard] },
+
+      { path: 'addinstrumexts', component: AddInstrumexts,  canActivate: [AuthGuard] },
+      { path: 'editinstrumexts', component: EditInstrumexts, canActivate: [AuthGuard2] },
+      { path: 'editinstrumexts/:id', component: EditInstrumexts, canActivate: [AuthGuard2] },
+      { path: 'typeinstrumexts', component: TypeInstrumextsType, canActivate: [AuthGuard] },
+      { path: 'addtypeinsttrumexts', component: AddTypeInstrumexts, canActivate: [AuthGuard] },
+      { path: 'edittypeinstrumexts/:id', component: EditTypeInstrumexts, canActivate: [AuthGuard] },
+      { path: 'listusertaednashode', component: ListUserTaedNashodeComponent, canActivate: [AuthGuard3] },
+      { path: 'activeaccount', component: ActiveAccountComponent, canActivate: [AuthGuard3] },
      // { path: 'activetypeinstrmexts', component: ActiveTypeInxComponent },
-      { path: 'finalactive', component: FinalActiveComponent },
-      { path: 'typeavaz', component: TypeAvazComponent },
-      { path: 'addtypeavaz', component: AddTypeAvazComponent },
-      { path: 'activetypeavaz', component: ActiveTypeAvazComponent },
-      { path: 'taedtypeavaz', component: TaedTypeInxComponent },
-      { path: 'liststate', component: ListStateComponent },
-      { path: 'addstate', component: AddState},
-      { path: 'addcity', component: Addcity },
-      { path: 'listcity', component: ListCityComponent },
-      { path: 'listkrga', component: ListKargahComponent },
-      { path: 'taeduserostani', component: TaenKarbaranComponent },
-      { path: 'manageuser', component: ManageUserComponent },
-      { path: 'edituser/:id', component: EditUser },
-      { path: 'modiriryatgozaresh', component: ModiryatGozareshComponent },
-      { path: 'maktab', component: MaktabComponent },
-      { path: 'musiclock', component: MusicLockComponent },
-      { path: 'dance', component: DanceComponent },
-      { path: 'kargah', component: AddKargahComponent },
-      { path: 'userroletow', component: UserRoleTowComponent},
-      { path: 'userroletherry', component: UserRoleTherryComponent},
-      { path: 'taedinstrument', component: TaedInstrumentComponent},
-      { path: 'activeinstrument', component: ActiveInstrumentComponent},
-      { path: 'mypanel', component: MyPanelComponent},
+      { path: 'finalactive', component: FinalActiveComponent, canActivate: [AuthGuard3] },
+      { path: 'typeavaz', component: TypeAvazComponent, canActivate: [AuthGuard] },
+      { path: 'addtypeavaz', component: AddTypeAvazComponent, canActivate: [AuthGuard] },
+      { path: 'activetypeavaz', component: ActiveTypeAvazComponent, canActivate: [AuthGuard3] },
+      { path: 'taedtypeavaz', component: TaedTypeInxComponent, canActivate: [AuthGuard3] },
+      { path: 'liststate', component: ListStateComponent, canActivate: [AuthGuard] },
+      { path: 'addstate', component: AddState, canActivate: [AuthGuard] },
+      { path: 'addcity', component: Addcity, canActivate: [AuthGuard] },
+      { path: 'listcity', component: ListCityComponent, canActivate: [AuthGuard] },
+      { path: 'listkrga', component: ListKargahComponent, canActivate: [AuthGuard] },
+      { path: 'taeduserostani', component: TaenKarbaranComponent, canActivate: [AuthGuard3] },
+      { path: 'manageuser', component: ManageUserComponent, canActivate: [AuthGuard] },
+      { path: 'edituser/:id', component: EditUser, canActivate: [AuthGuard3] },
+      { path: 'modiriryatgozaresh', component: ModiryatGozareshComponent, canActivate: [AuthGuard2] },
+      { path: 'maktab', component: MaktabComponent, canActivate: [AuthGuard] },
+      { path: 'musiclock', component: MusicLockComponent, canActivate: [AuthGuard] },
+      { path: 'dance', component: DanceComponent, canActivate: [AuthGuard] },
+      { path: 'kargah', component: AddKargahComponent, canActivate: [AuthGuard] },
+      { path: 'userroletow', component: UserRoleTowComponent, canActivate: [AuthGuard3] },
+      { path: 'userroletherry', component: UserRoleTherryComponent, canActivate: [AuthGuard3] },
+      { path: 'taedinstrument', component: TaedInstrumentComponent, canActivate: [AuthGuard] },
+      { path: 'activeinstrument', component: ActiveInstrumentComponent, canActivate: [AuthGuard2] },
+      { path: 'mypanel', component: MyPanelComponent, canActivate: [AuthGuard]},
+      { path: 'userostan', component: UserOstanComponent, canActivate: [AuthGuard2]},
+      
     ],
 
   },
@@ -153,7 +160,7 @@ const routes: Routes = [
   {
     path: 'edittypeinstrumexts', component: EditTypeInstrumexts,
     children: [
-      { path: 'edittypeinstrumexts/:id', component: EditTypeInstrumexts }
+      { path: 'edittypeinstrumexts/:id', component: EditTypeInstrumexts, canActivate: [AuthGuard] }
     ],
 
 

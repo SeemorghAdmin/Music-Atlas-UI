@@ -63,11 +63,12 @@ import { DialogComponent } from './user/registration/popup.component';
 import { TaedInstrumentComponent } from './home/manageinstrumrnt/taedinstrument.component';
 import { ActiveInstrumentComponent } from './home/manageinstrumrnt/activeinstrument.component';
 import { MyPanelComponent } from './home/mypanel/mypanel.component';
+import { UserOstanComponent } from './home/manageuser/userostan.component';
 
 @NgModule({
   declarations: [
     AppComponent, DetailInstrumentComponent, UserRoleTowComponent, UserRoleTherryComponent, DialogComponent,
-    UserComponent,TaedInstrumentComponent, ActiveInstrumentComponent, MyPanelComponent,
+    UserComponent,TaedInstrumentComponent, ActiveInstrumentComponent, MyPanelComponent, UserOstanComponent,
     RegistrationComponent,
     LoginComponent,
     AfzodanComponent,

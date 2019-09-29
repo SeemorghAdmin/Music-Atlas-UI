@@ -37,8 +37,9 @@ export class AddKargahComponent implements OnInit {
 
 
     selectMember(data) {
-        if (data.checked == true) {
+        if (data.checked != true) {
             this.selectedArray.push(data);
+            
         } else {
             let newArray = this.selectedArray.filter(function (el) {
                 return el.id !== data.id;

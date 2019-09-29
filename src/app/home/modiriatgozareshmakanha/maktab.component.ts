@@ -20,7 +20,7 @@ export class MaktabComponent implements OnInit {
     makt = {};
     t;
     selectMember(data) {
-        if (data.checked == true) {
+        if (data.checked != true) {
             this.selectedArray.push(data);
         } else {
             let newArray = this.selectedArray.filter(function (el) {
@@ -31,7 +31,7 @@ export class MaktabComponent implements OnInit {
         console.log(this.selectedArray);
     }
     selectMemberr(data) {
-        if (data.checked == true) {
+        if (data.checked != true) {
             this.selectedArrayy.push(data);
         } else {
             let newArray = this.selectedArrayy.filter(function (el) {

@@ -46,15 +46,37 @@ export class MyPanelComponent implements OnInit {
 
     musicluc(){
         this.int = 4;
+        this.service.getMusicLoc().subscribe(
+            res => {
+                this.val = res;
+            }
+        )
     }
     dancetable(){
         this.int = 5;
+        this.service.getDancetable().subscribe(
+            res => {
+                this.val = res;
+               
+            }
+        );
     }
     kargahsakht(){
         this.int = 6;
+        this.service.getKargah().subscribe(
+            res => {
+                this.val = res;
+                
+            }
+        )
     }
     maktab(){
         this.int = 7;
+        this.service.getMaktab().subscribe(
+            res => {
+                this.val = res;
+            }
+        )
     }
 
     
